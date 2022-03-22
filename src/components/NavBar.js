@@ -17,7 +17,7 @@ function NavBar() {
                         <span className="icon">
                             <ion-icon name="storefront-outline"></ion-icon>
                         </span>
-                        <span className="text">Ofertas</span>
+                        <span className="text">Productos</span>
                     </a>
                 </li>
                 <li className="list">

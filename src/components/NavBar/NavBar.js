@@ -1,4 +1,7 @@
 import './NavBar.css';
+import './AnimacionNavBar.js';
+import '../CartWidget/CartWidget.js';
+import CartWidget from '../CartWidget/CartWidget';
 
 function NavBar() {
     return (
@@ -7,7 +10,7 @@ function NavBar() {
                 <li className="list active">
                     <a href="#">
                         <span className="icon">
-                            <ion-icon name="play-outline"></ion-icon>
+                            <ion-icon name="logo-octocat"></ion-icon>
                         </span>
                         <span className="text">Home</span>
                     </a>
@@ -23,17 +26,9 @@ function NavBar() {
                 <li className="list">
                     <a href="#">
                         <span className="icon">
-                            <ion-icon name="add-outline"></ion-icon>
+                            <ion-icon name="people-outline"></ion-icon>
                         </span>
-                        <span className="text">Mas Vendidos</span>
-                    </a>
-                </li>
-                <li className="list">
-                    <a href="#">
-                        <span className="icon">
-                        <ion-icon name="gift-outline"></ion-icon>
-                        </span>
-                        <span className="text">Regalos</span>
+                        <span className="text">Nosotros</span>
                     </a>
                 </li>
                 <li className="list">
@@ -41,7 +36,7 @@ function NavBar() {
                         <span className="icon">
                             <ion-icon name="call-outline"></ion-icon>
                         </span>
-                        <span className="text">Contact</span>
+                        <span className="text">Contacto</span>
                     </a>
                 </li>
                 <li className="list">
@@ -52,6 +47,15 @@ function NavBar() {
                         <span className="text">Perfil</span>
                     </a>
                 </li>
+                <CartWidget/>
+                {/* <li className="list">
+                    <a href="#">
+                        <span className="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span className="text">Carrito</span>
+                    </a>
+                </li> */}
                 <div className="indicator"></div>
             </ul>
         </div>

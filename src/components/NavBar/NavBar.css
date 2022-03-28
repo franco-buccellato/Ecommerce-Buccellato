@@ -63,6 +63,10 @@ body {
     color: var(--clr);
 }
 
+.navigation ul li a .icon p{
+    display: inline-block;
+}
+
 .navigation ul li.active a .icon {
     transform: translateY(34px);
 }
@@ -143,4 +147,16 @@ body {
 
 .navigation ul li:nth-child(7).active ~ .indicator {
     transform: translateX(calc(70px * 6));
+}
+
+/* CSS de ItemListContainer */
+.container {
+    color: #34D2AF;
+    margin-top: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+    border: 20px;
+    border-color: #34D2AF;
+    border-style: double;
 }

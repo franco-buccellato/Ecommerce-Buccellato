@@ -2,13 +2,13 @@ import '../NavBar/NavBar.css';
 
 let cantidadProductos = 2;
 
-function CartWidget() {
+const CartWidget = (props) => {
     return (
             <li className="list">
                 <a href="#">
                     <span className="icon">
                         <ion-icon name="cart-outline"></ion-icon>
-                        <p>{cantidadProductos}</p>
+                        <p>{props.cantidad}2</p>
                     </span>
                     <span className="text">Carrito</span>
                 </a>

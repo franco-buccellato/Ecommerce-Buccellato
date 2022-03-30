@@ -17,7 +17,9 @@ function App() {
     <div>
       <NavBar cantidadCarrito={cantidad}/>
       <div className="App">
-        <ItemListContainer greeting={"Este es un mensaje de prueba."} onAdd={handleOnAdd}/>
+        <ItemListContainer greeting={"Este es el primer elemento."} onAdd={handleOnAdd}/>
+        <ItemListContainer greeting={"Este es el segundo elemento."} onAdd={handleOnAdd}/>
+        <ItemListContainer greeting={"Este es el tercer elemento."} onAdd={handleOnAdd}/>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo"/>
           <p>

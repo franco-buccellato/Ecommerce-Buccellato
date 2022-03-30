@@ -23,23 +23,23 @@ const Counter = ({inicial, maximoStock, onAdd}) => {
 
     const addCart = () => {
         onAdd(count);
-        setCount(inicial);
+        setCount(1);
     }
 
     console.log('Montando componente.');
     
     return(
         <div className='container-counter'>
-            <a className='button-counter' onClick={decrement}>
+            <div className='button-counter' onClick={decrement}>
                 <ion-icon name="remove-circle-outline"></ion-icon>
-            </a>
-            <p>{count}</p>
-            <a className='button-counter' onClick={increment}>
+            </div>
+            <h4>{count}</h4>
+            <div className='button-counter' onClick={increment}>
                 <ion-icon name="add-circle-outline"></ion-icon>
-            </a>
-            <a className='button-counter' onClick={addCart}>
-                <ion-icon name="refresh-circle-outline"></ion-icon>
-            </a>
+            </div>
+            <div className='button-counter' onClick={addCart}>
+                <ion-icon name="bag-add-outline"></ion-icon>
+            </div>
         </div>
     )
 

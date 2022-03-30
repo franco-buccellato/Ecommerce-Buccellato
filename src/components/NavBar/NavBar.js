@@ -3,7 +3,8 @@ import './AnimacionNavBar.js';
 import '../CartWidget/CartWidget.js';
 import CartWidget from '../CartWidget/CartWidget';
 
-function NavBar() {
+function NavBar({cantidadCarrito}) {
+
     return (
         <div className="navigation">
             <ul>
@@ -47,7 +48,7 @@ function NavBar() {
                         <span className="text">Perfil</span>
                     </div>
                 </li>
-                <CartWidget/>
+                <CartWidget inicial={cantidadCarrito}/>
                 <div className="indicator"></div>
             </ul>
         </div>

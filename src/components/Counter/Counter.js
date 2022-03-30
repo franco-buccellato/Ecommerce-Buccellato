@@ -23,6 +23,7 @@ const Counter = ({inicial, maximoStock, onAdd}) => {
 
     const addCart = () => {
         onAdd(count);
+        setCount(inicial);
     }
 
     console.log('Montando componente.');

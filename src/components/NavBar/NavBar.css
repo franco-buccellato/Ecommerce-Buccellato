@@ -42,7 +42,7 @@ body {
     z-index: 1;
 }
 
-.navigation ul li a {
+.navigation ul li div {
     position: relative;
     display: flex;
     justify-content: center;
@@ -53,7 +53,7 @@ body {
     font-weight: 500;
 }
 
-.navigation ul li a .icon {
+.navigation ul li div .icon {
     position: relative;
     display: block;
     line-height: 75px;
@@ -63,15 +63,15 @@ body {
     color: var(--clr);
 }
 
-.navigation ul li a .icon p{
+.navigation ul li div .icon p{
     display: inline-block;
 }
 
-.navigation ul li.active a .icon {
+.navigation ul li.active div .icon {
     transform: translateY(34px);
 }
 
-.navigation ul li a .text {
+.navigation ul li div .text {
     position: absolute;
     color: var(--clr);
     font-weight: 400;
@@ -81,7 +81,7 @@ body {
     opacity: 0; 
 }
 
-.navigation ul li.active a .text {
+.navigation ul li.active div .text {
     opacity: 1;
     transform: translateY(-15px);
 }

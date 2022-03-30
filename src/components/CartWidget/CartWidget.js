@@ -1,17 +1,17 @@
 import '../NavBar/NavBar.css';
 
-let cantidadProductos = 2;
+let cantidadProductos = 0;
 
-const CartWidget = (props) => {
+const CartWidget = (inicial) => {
     return (
             <li className="list">
-                <a href="#">
+                <div>
                     <span className="icon">
                         <ion-icon name="cart-outline"></ion-icon>
-                        <p>{props.cantidad}2</p>
+                        <p id='cantidadCarrito'>{cantidadProductos}</p>
                     </span>
                     <span className="text">Carrito</span>
-                </a>
+                </div>
             </li>
     );
 }

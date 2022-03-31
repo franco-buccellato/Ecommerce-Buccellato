@@ -12,12 +12,14 @@
 }
 
 .container {
+    position: relative;
+    display: flex;
     color: #34D2AF;
-    margin-top: 50px;
     padding-top: 100px;
     padding-bottom: 100px;
     text-align: center;
-    border: 20px;
+    border: 10px;
     border-color: #34D2AF;
     border-style: double;
+    justify-content: center;
 }

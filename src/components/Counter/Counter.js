@@ -14,7 +14,7 @@ const Counter = ({inicial, maximoStock, onAdd}) => {
     )
 
     const decrement = () => {
-        count >= 2 ? setCount(count -1) : console.log('Mínimo stock.');
+        count >= inicial ? setCount(count -1) : console.log('Mínimo stock.');
     }
 
     const increment = () => {

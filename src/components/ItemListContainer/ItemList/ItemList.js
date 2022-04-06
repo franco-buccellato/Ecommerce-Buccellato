@@ -19,9 +19,7 @@ const ItemList = () => {
 
     return (
         <div className="container-itemList">
-            <ul>
-                {productos.map(producto => <Item {...producto}/>)}
-            </ul>
+            {productos.map(producto => <Item {...producto}/>)}
         </div>
     );
 }

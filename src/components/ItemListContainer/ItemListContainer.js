@@ -1,6 +1,7 @@
 import './ItemListContainer.css';
 import '../Counter/Counter.js';
 import Counter from '../Counter/Counter';
+import ItemList from './ItemList/ItemList';
 
 const ItemListContainer = ({greeting, onAdd}) => {
 
@@ -11,10 +12,8 @@ const ItemListContainer = ({greeting, onAdd}) => {
 
     return (
         <div className="container">
-            <div>
-                <h1 className="listContainer">{greeting}</h1>
-            </div>
-                <Counter inicial={1} maximoStock={10} onAdd={handleOnAdd}/>
+            <ItemList/>
+            {/* <Counter inicial={1} maximoStock={10} onAdd={handleOnAdd}/> */}
         </div>
     );
 }

@@ -1,5 +1,5 @@
 import './ItemList.css';
-import { getProductos } from '../../../asyncmock';
+import { getProductos } from '../../asyncmock';
 import Item from '../Item/Item';
 import { useEffect, useState } from 'react';
 

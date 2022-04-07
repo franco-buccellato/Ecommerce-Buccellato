@@ -1,7 +1,7 @@
 import './ItemListContainer.css';
 import '../Counter/Counter.js';
 import Counter from '../Counter/Counter';
-import ItemList from './ItemList/ItemList';
+import ItemList from '../ItemList/ItemList';
 
 const ItemListContainer = ({greeting, onAdd}) => {
 

@@ -120,3 +120,18 @@ export const getProductos = () => {
         }
     )
 }
+export const getProductoById = (idProducto) => {
+    return new Promise (
+        resolve => {
+            setTimeout(
+                () => {
+                    resolve(
+                        listaDeProductos.find(
+                            producto => producto.id === idProducto
+                        )
+                    )
+                },2000
+            )
+        }
+    )
+}

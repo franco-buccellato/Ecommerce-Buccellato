@@ -26,7 +26,11 @@ function App() {
           </p>
         </header>
       </div>
-      <ItemDetailContainer productoId = {'003'}/>
+      <ItemDetailContainer productoId = {'001'}/>
+      <ItemDetailContainer productoId = {'004'}/>
+      <ItemDetailContainer productoId = {'007'}/>
+      <ItemDetailContainer productoId = {'010'}/>
+      <ItemDetailContainer productoId = {'013'}/>
     </div>
   );
 }

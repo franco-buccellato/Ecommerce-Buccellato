@@ -12,18 +12,17 @@
 }
 
 .container-counter {
-    position: relative;
     display: flex;
+    padding: 1.5em 3.1em;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
-    background-color: var(--clr);
-    height: 150px;
-    border: 10px;
-    border-color: #34D2AF;
-    border-style: groove;
-    font-size: 50px;
-    width: 40%;
+    border: none;
+    border-radius: 7px;
+    color: #fff;
+    background-color: #34D2AF;
+    box-shadow: 2px 2px 25px -7px #4c4c4c;
+    cursor: pointer;
+    width: 50%;
 }
 
 .container-counter div {
@@ -31,9 +30,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
-    width: 100px;
-    font-size: 50px;
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .container-counter h4 {
@@ -41,7 +40,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
-    width: 100px;
-    font-size: 50px;
 }

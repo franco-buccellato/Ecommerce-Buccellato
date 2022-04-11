@@ -1,7 +1,7 @@
 import './ItemDetail.css';
 import Counter from '../Counter/Counter';
 
-const itemDetail = ({nombre, descripcion_breve, precio, link_imagen, stock, categoria, onAdd}) => {
+const itemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_imagen, imagenes, stock, categoria, onAdd}) => {
 
     const handleOnAdd = (nuevaCantidad) => {
         console.log(`Actualizar carrito sumando ${nuevaCantidad} unidades.`);
@@ -9,37 +9,51 @@ const itemDetail = ({nombre, descripcion_breve, precio, link_imagen, stock, cate
     }
 
     return (
-        <div className="container-item">
-            <div className="container page-wrapper">
-                <div className="page-inner">
-                    <div className="row">
-                        <div className="el-wrapper">
-                            <div className="box-up">
-                                <img className="img" src={link_imagen} alt={nombre}></img>
-                                <div className="img-info">
-                                <div className="info-inner">
-                                    <span className="p-name">{nombre}</span>
-                                    <span className="p-company">{categoria}</span>
-                                </div>
-                                <div className="a-size">{descripcion_breve}</div>
-                                </div>
-                            </div>
-                            <div className="box-down">
-                                <div className="h-bg">
-                                    <div className="h-bg-inner"></div>
-                                </div>
-                                <div className="cart" href="#">
-                                    <span className="price">${precio}</span>
-                                    <span className="add-to-cart">
-                                        <span className="txt">Stock: {stock} u.</span>
-                                    </span>
-                                </div>
-                            </div>
+        <div className="container-item-detail">
+            <div className="product">
+                <div className="product__photo">
+                    <div className="photo-container">
+                        <div className="photo-main">
+                            <img src={link_imagen} alt="Imagen principal"></img>
+                        </div>
+                        <div className="photo-album">
+                            <ul>
+                                {/* {
+                                    imagenes.map(
+                                        unaImagen => {return <li><img src={unaImagen} alt="Imagen secundaria"></img></li>}
+                                    )
+                                } */}
+                            </ul>
                         </div>
                     </div>
                 </div>
+                <div className="product__info">
+                    <div className="title">
+                        <h1>{nombre}</h1>
+                        <span>ID: {id}</span>
+                        <br></br>
+                        <span>{marca}</span>
+                    </div>
+                    <div className="price">
+                        $ <span>{precio}</span>
+                    </div>
+                    <div className="variant">
+                        <h3>Selccionar Talle</h3>
+                        <ul>
+                            {/* {
+                                talle.map(
+                                    unaTalle => {return <li>{unaTalle}</li>}
+                                )
+                            } */}
+                        </ul>
+                    </div>
+                    <div className="description">
+                        <h3>Decripción</h3>
+                        <span>{descripcion_breve}</span>
+                    </div>
+                    <Counter inicial={1} maximoStock={stock} onAdd={handleOnAdd}/>
+                </div>
             </div>
-            <Counter inicial={1} maximoStock={stock} onAdd={handleOnAdd}/>
         </div>
     );
 }

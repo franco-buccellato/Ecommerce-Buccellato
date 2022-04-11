@@ -5,7 +5,7 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = ({productoId, onAdd}) => {
 
-    const [producto, setProducto] = useState([]);
+    const [producto, setProducto] = useState();
 
     useEffect(
         () => {
@@ -14,13 +14,13 @@ const ItemDetailContainer = ({productoId, onAdd}) => {
                     setProducto(producto)
                 }
             )
-        }, []
+        }, [productoId]
     )
 
     return (
         <div className="container-itemDetail">
             {
-                <ItemDetail key={producto.id} {...producto}/>
+                producto?<ItemDetail key={producto.id} {...producto}/> : <p> Cargando... </p>
             }
         </div>
     );

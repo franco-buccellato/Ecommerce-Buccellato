@@ -18,11 +18,11 @@ const itemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_i
                         </div>
                         <div className="photo-album">
                             <ul>
-                                {/* {
+                                {
                                     imagenes.map(
                                         unaImagen => {return <li><img src={unaImagen} alt="Imagen secundaria"></img></li>}
                                     )
-                                } */}
+                                }
                             </ul>
                         </div>
                     </div>
@@ -40,11 +40,11 @@ const itemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_i
                     <div className="variant">
                         <h3>Selccionar Talle</h3>
                         <ul>
-                            {/* {
+                            {
                                 talle.map(
                                     unaTalle => {return <li>{unaTalle}</li>}
                                 )
-                            } */}
+                            }
                         </ul>
                     </div>
                     <div className="description">

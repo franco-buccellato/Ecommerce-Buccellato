@@ -73,7 +73,7 @@ color: #34D2AF;
 }
 
 .el-wrapper:hover .add-to-cart {
-left: 50%;
+    left: 40%;
 }
 
 .el-wrapper:hover .img {

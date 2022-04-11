@@ -19,15 +19,12 @@ const ItemListContainer = ({greeting, onAdd}) => {
         }, []
     )
 
-/*     const handleOnAdd = (nuevaCantidad) => {
-        console.log(`Actualizar carrito sumando ${nuevaCantidad} unidades.`);
-        onAdd(nuevaCantidad);
-    } */
-
     return (
         <div className="container">
             <ItemList productos={productos}/>
-            {/* <Counter inicial={1} maximoStock={10} onAdd={handleOnAdd}/> */}
+            {
+                productos.length > 0 ? <ItemList productos={productos}/> : <p>Cargando...</p>
+            }
         </div>
     );
 }

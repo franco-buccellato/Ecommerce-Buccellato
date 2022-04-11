@@ -223,7 +223,7 @@ export const getProductos = () => {
             setTimeout(
                 () => {
                     resolve(listaDeProductos)
-                }, 2000
+                }, 5000
             )
         }
     )
@@ -239,7 +239,7 @@ export const getProductoById = (idProducto) => {
                             producto => producto.id === idProducto
                         )
                     )
-                }, 1000
+                }, 4000
             )
         }
     )

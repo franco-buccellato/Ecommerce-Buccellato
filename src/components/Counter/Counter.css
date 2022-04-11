@@ -8,7 +8,7 @@
 }
 
 :root {
-    --clr: #5B5B5B;
+    --clr: #8b8b8b;
 }
 
 .container-counter {
@@ -20,7 +20,7 @@
     border-radius: 7px;
     color: #fff;
     background-color: #34D2AF;
-    box-shadow: 2px 2px 25px -7px #4c4c4c;
+    box-shadow: 2px 2px 25px -7px --clr;
     cursor: pointer;
     width: 50%;
 }

@@ -8,7 +8,7 @@
 }
 
 :root {
-    --clr: #5B5B5B;
+    --clr: #8b8b8b;
 }
 
 .container {
@@ -16,9 +16,6 @@
     display: flex;
     color: #34D2AF;
     text-align: center;
-    /* border: 1px; 
-    border-color: #34D2AF;
-    border-style: double;*/
     justify-content: center;
     flex-direction: row;
 }

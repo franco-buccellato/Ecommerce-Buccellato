@@ -1,9 +1,9 @@
 import './ItemListContainer.css';
 import '../Counter/Counter.js';
-/* import Counter from '../Counter/Counter'; */
 import ItemList from '../ItemList/ItemList';
 import { useEffect, useState } from 'react';
 import { getProductos } from '../../asyncmock';
+import Loader from '../Loader/Loader';
 
 const ItemListContainer = ({greeting, onAdd}) => {
 
@@ -23,7 +23,7 @@ const ItemListContainer = ({greeting, onAdd}) => {
         <div className="container">
             <ItemList productos={productos}/>
             {
-                productos.length > 0 ? <ItemList productos={productos}/> : <p>Cargando...</p>
+                productos.length > 0 ? <ItemList productos={productos}/> : <Loader />
             }
         </div>
     );

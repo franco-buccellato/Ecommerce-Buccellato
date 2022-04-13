@@ -1,7 +1,7 @@
 import './Item.css';
 import { Link } from 'react-router-dom';
 
-const Item = ({id, nombre, descripcion_breve, precio, link_imagen, stock, categoria}) => {
+const Item = ({id, nombre, descripcion_breve, precio, link_imagen, stock, categoria, precioOferta}) => {
     return (
         <div className="container-item">
             <div className="container page-wrapper">
@@ -22,8 +22,9 @@ const Item = ({id, nombre, descripcion_breve, precio, link_imagen, stock, catego
                                 <div className="h-bg">
                                     <div className="h-bg-inner"></div>
                                 </div>
+                                <span className="price">{precioOferta === '' ? '' : 'Oferta!!'}</span>
                                 <div className="cart" href="#">
-                                    <span className="price">${precio}</span>
+                                    <span className="price">${precioOferta === '' ? precio :  precioOferta}</span>
                                     <span className="add-to-cart">
                                         <span className="txt">Stock: {stock} u.</span>
                                     </span>
@@ -33,7 +34,7 @@ const Item = ({id, nombre, descripcion_breve, precio, link_imagen, stock, catego
                     </div>
                 </div>
             </div>
-            <footer>
+            <footer className='boton-prueba-link'>
                 <Link to ={`/detail/${id}`}>Ver Detalle</Link>
             </footer>
         </div>

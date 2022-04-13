@@ -19,7 +19,7 @@ img {
 
 
 .container-item-detail  {
-    padding: 30px 0;
+    padding: 150px 0;
 }
 /* ----- Product Section ----- */
 .product {
@@ -179,4 +179,9 @@ footer a {
 }
 footer a:hover {
     color: #34D2AF;
+}
+
+.cartel_oferta {
+    color: #34D2AF;
+    font-size:35px;
 }

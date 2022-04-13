@@ -1,8 +1,11 @@
 .loader-container {
     padding-top: 100px;
+    text-align: center;
+    align-items: center;
 }
 
 .loader{
+    display: grid;
     position: relative;
     width: 200px;
     height: 200px;

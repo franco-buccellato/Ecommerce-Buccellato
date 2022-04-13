@@ -6,6 +6,8 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Nosotros from './components/Nosotros/Nosotros';
 import Contacto from './components/Contacto/Contacto';
+import CategoriaListContainer from './components/CategoriaListContainer/CategoriaListContainer';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -22,13 +24,15 @@ function App() {
       <NavBar cantidadCarrito={cantidad}/>
       <Routes>
         <Route exact path = '/' element = {<ItemListContainer onAdd={handleOnAdd}/>}/>
-        <Route exact path = '/categoria/:categoriaId' element = {<ItemListContainer onAdd={handleOnAdd}/>}/>
-        <Route exact path = '/ofertas' element = {<span>Ofertas</span>}/>
+        <Route exact path = '/categoria' element = {<CategoriaListContainer/>}/>
+        <Route exact path = '/categoria/:categoriaId' element = {<ItemListContainer/>}/>
+        <Route exact path = '/ofertas' element = {<ItemListContainer/>}/>
         <Route exact path = '/nosotros' element = {<Nosotros/>}/>
         <Route exact path = '/contacto' element = {<Contacto/>}/>
         <Route exact path = '/carrito' element = {<span>Carrito</span>}/>
         <Route exact path = '/detail/:productId' element = {<ItemDetailContainer/>}/>
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }

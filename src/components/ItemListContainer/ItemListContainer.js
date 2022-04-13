@@ -6,7 +6,7 @@ import { getProductos } from '../../asyncmock';
 import Loader from '../Loader/Loader';
 import { useParams } from 'react-router-dom';
 
-const ItemListContainer = ({onAdd}) => {
+const ItemListContainer = () => {
 
     const [productos, setProductos] = useState([]);
 
@@ -19,7 +19,7 @@ const ItemListContainer = ({onAdd}) => {
                     setProductos(productos)
                 }
             )
-        }, []
+        }, [productos]
     )
 
     return (

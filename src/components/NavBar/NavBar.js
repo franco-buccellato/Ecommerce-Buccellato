@@ -21,12 +21,12 @@ function NavBar({cantidadCarrito}) {
                         </Link>
                     </li>
                     <li className="list">
-                        <Link to = {'/productos'}>
+                        <Link to = {'/categoria'}>
                             <div>
                                 <span className="icon">
                                     <ion-icon name="storefront-outline"></ion-icon>
                                 </span>
-                                <span className="text">Productos</span>
+                                <span className="text">Categorias</span>
                             </div>
                         </Link>
                     </li>
@@ -34,7 +34,7 @@ function NavBar({cantidadCarrito}) {
                         <Link to = {'/ofertas'}>
                             <div>
                                 <span className="icon">
-                                    <ion-icon name="storefront-outline"></ion-icon>
+                                    <ion-icon name="cash-outline"></ion-icon>
                                 </span>
                                 <span className="text">Ofertas</span>
                             </div>

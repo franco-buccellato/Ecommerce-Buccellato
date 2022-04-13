@@ -1,7 +1,7 @@
 import './ItemDetail.css';
 import Counter from '../Counter/Counter';
 
-const itemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_imagen, imagenes, stock, categoria, onAdd}) => {
+const itemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_imagen, imagenes, stock, categoria, precioOferta, onAdd}) => {
 
     const handleOnAdd = (nuevaCantidad) => {
         console.log(`Actualizar carrito sumando ${nuevaCantidad} unidades.`);
@@ -34,8 +34,9 @@ const itemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_i
                         <br></br>
                         <span>{marca}</span>
                     </div>
+                    <span className='cartel_oferta'>{precioOferta === '' ? '' : 'Oferta!!!'}</span>
                     <div className="price">
-                        $ <span>{precio}</span>
+                        $ <span>{precioOferta === '' ? precio : precioOferta}</span>
                     </div>
                     <div className="variant">
                         <h3>Selccionar Talle</h3>

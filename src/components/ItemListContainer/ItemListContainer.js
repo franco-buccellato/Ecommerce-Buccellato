@@ -4,14 +4,17 @@ import ItemList from '../ItemList/ItemList';
 import { useEffect, useState } from 'react';
 import { getProductos } from '../../asyncmock';
 import Loader from '../Loader/Loader';
+import { useParams } from 'react-router-dom';
 
-const ItemListContainer = ({greeting, onAdd}) => {
+const ItemListContainer = ({onAdd}) => {
 
     const [productos, setProductos] = useState([]);
 
+    const {categoriaId} = useParams();
+
     useEffect(
         () => {
-            getProductos().then(
+            getProductos(categoriaId).then(
                 productos => {
                     setProductos(productos)
                 }
@@ -21,7 +24,6 @@ const ItemListContainer = ({greeting, onAdd}) => {
 
     return (
         <div className="container">
-            <ItemList productos={productos}/>
             {
                 productos.length > 0 ? <ItemList productos={productos}/> : <Loader />
             }

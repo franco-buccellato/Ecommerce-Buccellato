@@ -3,14 +3,17 @@ import { useEffect, useState } from 'react';
 import { getProductoById } from '../../asyncmock';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Loader from '../Loader/Loader';
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = ({productoId, onAdd}) => {
 
     const [producto, setProducto] = useState();
 
+    const {productId} = useParams();
+
     useEffect(
         () => {
-            getProductoById(productoId).then(
+            getProductoById(productId).then(
                 producto => {
                     setProducto(producto)
                 }

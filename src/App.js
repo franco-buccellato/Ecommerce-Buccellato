@@ -1,9 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import {useState} from 'react'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Nosotros from './components/Nosotros/Nosotros';
+import Contacto from './components/Contacto/Contacto';
+
 
 function App() {
 
@@ -15,23 +18,18 @@ function App() {
   }
 
   return (
-    <div>
+    <BrowserRouter>
       <NavBar cantidadCarrito={cantidad}/>
-      <div className="App">
-        <ItemListContainer greeting={"Hola"} onAdd={handleOnAdd}/>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo"/>
-          <p>
-            Ecommerce en Desarollo....
-          </p>
-        </header>
-      </div>
-      <ItemDetailContainer productoId = {'001'}/>
-      <ItemDetailContainer productoId = {'004'}/>
-      <ItemDetailContainer productoId = {'007'}/>
-      <ItemDetailContainer productoId = {'010'}/>
-      <ItemDetailContainer productoId = {'013'}/>
-    </div>
+      <Routes>
+        <Route exact path = '/' element = {<ItemListContainer onAdd={handleOnAdd}/>}/>
+        <Route exact path = '/categoria/:categoriaId' element = {<ItemListContainer onAdd={handleOnAdd}/>}/>
+        <Route exact path = '/ofertas' element = {<span>Ofertas</span>}/>
+        <Route exact path = '/nosotros' element = {<Nosotros/>}/>
+        <Route exact path = '/contacto' element = {<Contacto/>}/>
+        <Route exact path = '/carrito' element = {<span>Carrito</span>}/>
+        <Route exact path = '/detail/:productId' element = {<ItemDetailContainer/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

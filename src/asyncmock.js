@@ -217,13 +217,18 @@ const listaDeProductos = [
     }
 ];
 
-export const getProductos = () => {
+export const getProductos = (categoriaId) => {
     return new Promise (
         resolve => {
             setTimeout(
                 () => {
-                    resolve(listaDeProductos)
-                }, 5000
+                    resolve(
+                        categoriaId ?
+                        listaDeProductos.filter(
+                            producto => producto.categoria === categoriaId
+                        ) : listaDeProductos
+                    )
+                }, 2000
             )
         }
     )
@@ -239,7 +244,7 @@ export const getProductoById = (idProducto) => {
                             producto => producto.id === idProducto
                         )
                     )
-                }, 4000
+                }, 2000
             )
         }
     )

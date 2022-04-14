@@ -12,7 +12,8 @@ import Footer from './components/Footer/Footer';
 
 function App() {
 
-  const [cantidad, setCantidad] = useState(0);
+  const [cantidad, setCantidad] = useState(1);
+  const [cart, setCart] = useState([]);
 
   const handleOnAdd = (nuevaCantidad) => {
     console.log(`A la App llego ${nuevaCantidad} unidades.`);
@@ -30,7 +31,7 @@ function App() {
         <Route exact path = '/nosotros' element = {<Nosotros/>}/>
         <Route exact path = '/contacto' element = {<Contacto/>}/>
         <Route exact path = '/carrito' element = {<span>Carrito</span>}/>
-        <Route exact path = '/detail/:productId' element = {<ItemDetailContainer/>}/>
+        <Route exact path = '/detail/:productId' element = {<ItemDetailContainer setCart = {setCart} cart = {cart}/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

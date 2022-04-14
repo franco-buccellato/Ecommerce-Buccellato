@@ -5,7 +5,7 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import Loader from '../Loader/Loader';
 import { useParams } from 'react-router-dom';
 
-const ItemDetailContainer = ({productoId, onAdd}) => {
+const ItemDetailContainer = ({productoId, setCart, cart}) => {
 
     const [producto, setProducto] = useState();
 
@@ -24,7 +24,7 @@ const ItemDetailContainer = ({productoId, onAdd}) => {
     return (
         <div className="container-itemDetail">
             {
-                producto?<ItemDetail key={producto.id} {...producto}/> : <Loader />
+                producto?<ItemDetail key={producto.id} {...producto} setCart = {setCart} cart = {cart}/> : <Loader />
             }
         </div>
     );

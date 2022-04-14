@@ -1,11 +1,24 @@
 import './ItemDetail.css';
 import Counter from '../Counter/Counter';
+import { Link } from 'react-router-dom';
+import { useState } from 'react'
 
-const itemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_imagen, imagenes, stock, categoria, precioOferta, onAdd}) => {
+const ItemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_imagen, imagenes, stock, categoria, precioOferta, onAdd, setCart, cart}) => {
+
+
+    const [cantidad, setCantidad] = useState(0);
 
     const handleOnAdd = (nuevaCantidad) => {
         console.log(`Actualizar carrito sumando ${nuevaCantidad} unidades.`);
-        onAdd(nuevaCantidad);
+        setCantidad(nuevaCantidad);
+        //onAdd(nuevaCantidad);
+        /* const objProd = {
+            id,
+            nombre,
+            precio,
+            cantidad
+        }
+        setCart([...cart, objProd]); */
     }
 
     return (
@@ -53,9 +66,10 @@ const itemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_i
                         <span>{descripcion_breve}</span>
                     </div>
                     <Counter inicial={1} maximoStock={stock} onAdd={handleOnAdd}/>
+                    {cantidad > 0 ? <Link to ={`/carrito`}>Ir al Carrito</Link> : ''}
                 </div>
             </div>
         </div>
     );
 }
-export default itemDetail;
+export default ItemDetail;

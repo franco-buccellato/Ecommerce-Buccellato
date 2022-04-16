@@ -40,6 +40,9 @@ const Counter = ({inicial, maximoStock, onAdd}) => {
             <div className='button-counter' onClick={addCart}>
                 <ion-icon name="bag-add-outline"></ion-icon>
             </div>
+            <div>
+                <span className='cantidad-stock'>Stock: {maximoStock} u.</span>
+            </div>
         </div>
     )
 

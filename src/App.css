@@ -37,3 +37,11 @@
     transform: rotate(360deg);
   }
 }
+
+.carrito-list {
+  display: inline-block;
+  width: 100%;
+  margin-top: 150px;
+  height: 1000px;
+  text-align: center;
+}

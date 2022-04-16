@@ -8,6 +8,7 @@ import Nosotros from './components/Nosotros/Nosotros';
 import Contacto from './components/Contacto/Contacto';
 import CategoriaListContainer from './components/CategoriaListContainer/CategoriaListContainer';
 import Footer from './components/Footer/Footer';
+import CartListContainer from './components/CartListContainer/CartListContainer';
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
         <Route exact path = '/ofertas' element = {<ItemListContainer/>}/>
         <Route exact path = '/nosotros' element = {<Nosotros/>}/>
         <Route exact path = '/contacto' element = {<Contacto/>}/>
-        <Route exact path = '/carrito' element = {<span>Carrito</span>}/>
+        <Route exact path = '/carrito' element = {<CartListContainer/>}/>
         <Route exact path = '/detail/:productId' element = {<ItemDetailContainer setCart = {setCart} cart = {cart}/>}/>
       </Routes>
       <Footer/>

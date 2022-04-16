@@ -3,7 +3,7 @@ import Counter from '../Counter/Counter';
 import { Link } from 'react-router-dom';
 import { useState } from 'react'
 
-const ItemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_imagen, imagenes, stock, categoria, precioOferta, onAdd, setCart, cart}) => {
+const ItemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_imagen, imagenes, stock, precioOferta, setCart, cart}) => {
 
 
     const [cantidad, setCantidad] = useState(0);
@@ -11,14 +11,13 @@ const ItemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_i
     const handleOnAdd = (nuevaCantidad) => {
         console.log(`Actualizar carrito sumando ${nuevaCantidad} unidades.`);
         setCantidad(nuevaCantidad);
-        //onAdd(nuevaCantidad);
-        /* const objProd = {
+        const objProd = {
             id,
             nombre,
             precio,
             cantidad
         }
-        setCart([...cart, objProd]); */
+        setCart([...cart, objProd]);
     }
 
     return (
@@ -56,7 +55,7 @@ const ItemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_i
                         <ul>
                             {
                                 talle.map(
-                                    unaTalle => {return <li>{unaTalle}</li>}
+                                    (unaTalle, index)=> {return <li key={index}>{unaTalle}</li>}
                                 )
                             }
                         </ul>

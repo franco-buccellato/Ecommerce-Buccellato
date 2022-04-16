@@ -12,7 +12,7 @@ import Footer from './components/Footer/Footer';
 
 function App() {
 
-  const [cantidad, setCantidad] = useState(1);
+  const [cantidad, setCantidad] = useState(0);
   const [cart, setCart] = useState([]);
 
   const handleOnAdd = (nuevaCantidad) => {

@@ -5,11 +5,16 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import Loader from '../Loader/Loader';
 import { useParams } from 'react-router-dom';
 
-const ItemDetailContainer = ({productoId, setCart, cart}) => {
+const ItemDetailContainer = ({setCart, cart}) => {
 
     const [producto, setProducto] = useState();
 
     const {productId} = useParams();
+
+    /*   const setCart = () => {
+        setCantidad(nuevaCantidad);
+        setCart(cart);
+    } */
 
     useEffect(
         () => {
@@ -18,7 +23,7 @@ const ItemDetailContainer = ({productoId, setCart, cart}) => {
                     setProducto(producto)
                 }
             )
-        }, [productoId]
+        }, [productId]
     )
 
     return (

@@ -19,7 +19,7 @@ const ItemListContainer = () => {
                     setProductos(productos)
                 }
             )
-        }, [productos]
+        }, [categoriaId]
     )
 
     return (

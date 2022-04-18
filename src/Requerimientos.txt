@@ -1,0 +1,72 @@
+Aclaro un poquito el desafio del context:
+
+👉Pide hacer el CartContext de nuestro proyecto, para eso recomiendo crear una carpeta context y dentro el archivo: CartContext.js
+
+Aca debemos tener un state que vamos a usar de carrito, es decir va a contener todos los productos que vamos a ir agregando.
+Un ejemplo de este state completo puede ser:
+
+[
+
+{{id:52, name:“adidas supernova”,category:“zapatillas”},cant:2},
+
+{{id:105, name:“Remera Aeroready running”,category:“remeras”},cant:1},
+
+{{id:2, name:“Pantalon deportivo Real Madrid”,category:“pantalon”},cant:2},
+
+]
+
+Puede ser distinto, aca estoy grabando un objeto y dentro otro objeto del producto y la cantidad aparte, puede ser que pongas todo en un solo objeto.
+
+👉Tambien hay que crer funciones aca dentro:
+
+🔹addCart –> La misma va a ser ejecutada cuando se presione en “agregar carrito” y va a agregar el producto y la cantidad al state del carrito.
+CUIDADO: si el producto ya esta en el carrito, se debe actualizar la cantidad, no volver a repetir el producto.
+
+Ej: Arranco la App y agrego 2 zapatillas, me debe figurar asi:
+
+[
+
+{{id:52, name:“adidas supernova”,category:“zapatillas”},cant:2}
+
+]
+
+Vuelvo a ingresar al producto, y agrego 3 mas de esas mismas zapatillas, entonces:
+
+[
+
+{{id:52, name:“adidas supernova”,category:“zapatillas”},cant:5}
+
+]
+
+Si se me agrega asi esta mal:
+
+[
+
+{{id:52, name:“adidas supernova”,category:“zapatillas”},cant:2},
+
+{{id:52, name:“adidas supernova”,category:“zapatillas”},cant:3}
+
+]
+
+Y despues las siguientes funciones les va a servir:
+
+🔹isInCart(itemId) —> La idea es que devuelve true si el ID se encuentra en el carrito, y false si no se encuentra. Se puede utilizar el metodo some.
+
+🔹clear() —> Aca debemos borrar todos los elementos del state carrito
+
+🔹removeItem(itemId) —> Aca debemos borrar un solo producto. Se puede utilizar el metodo filter y que devuelva el array sin ese elemento
+
+👉Por ultimo, la unica función que deben implementar es addItem, que debe ser llamada desde el itemDetail.
+
+Si venimos haciendo las cosas como piden los desafios, el itemDetail recibe por props un item, y la cantidad por el ItemCount.
+Entonces deberiamos en el handleOnAdd del Itemdetail usar la función addItem del context.
+
+Para llamarla en el ItemDetail hay que invocarla asi:
+
+const { addItem } = useContext(CartContext)
+
+Cualquier consulta no duden en contactarme.
+
+Nos vemos a la noche 👋
+
+Saludos.

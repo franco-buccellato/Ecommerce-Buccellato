@@ -9,33 +9,33 @@ import Contacto from './components/Contacto/Contacto';
 import CategoriaListContainer from './components/CategoriaListContainer/CategoriaListContainer';
 import Footer from './components/Footer/Footer';
 import CartListContainer from './components/CartListContainer/CartListContainer';
-
+import {CartContextProvider} from './components/Context/CartContext'
 
 function App() {
 
   const [cantidad, setCantidad] = useState(0);
-  const [cart, setCart] = useState([]);
 
   const handleOnAdd = (nuevaCantidad) => {
-    console.log(`A la App llego ${nuevaCantidad} unidades.`);
     setCantidad(cantidad + nuevaCantidad);
   }
 
   return (
-    <BrowserRouter>
-      <NavBar cantidadCarrito={cantidad}/>
-      <Routes>
-        <Route exact path = '/' element = {<ItemListContainer onAdd={handleOnAdd}/>}/>
-        <Route exact path = '/categoria' element = {<CategoriaListContainer/>}/>
-        <Route exact path = '/categoria/:categoriaId' element = {<ItemListContainer/>}/>
-        <Route exact path = '/ofertas' element = {<ItemListContainer/>}/>
-        <Route exact path = '/nosotros' element = {<Nosotros/>}/>
-        <Route exact path = '/contacto' element = {<Contacto/>}/>
-        <Route exact path = '/carrito' element = {<CartListContainer/>}/>
-        <Route exact path = '/detail/:productId' element = {<ItemDetailContainer setCart = {setCart} cart = {cart}/>}/>
-      </Routes>
-      <Footer/>
-    </BrowserRouter>
+    <CartContextProvider onAdd={handleOnAdd}>
+      <BrowserRouter>
+        <NavBar cantidadCarrito={cantidad}/>
+        <Routes>
+          <Route exact path = '/' element = {<ItemListContainer/>}/>
+          <Route exact path = '/categoria' element = {<CategoriaListContainer/>}/>
+          <Route exact path = '/categoria/:categoriaId' element = {<ItemListContainer/>}/>
+          <Route exact path = '/ofertas' element = {<ItemListContainer/>}/>
+          <Route exact path = '/nosotros' element = {<Nosotros/>}/>
+          <Route exact path = '/contacto' element = {<Contacto/>}/>
+          <Route exact path = '/carrito' element = {<CartListContainer/>}/>
+          <Route exact path = '/detail/:productId' element = {<ItemDetailContainer/>}/>
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
+    </CartContextProvider>
   );
 }
 

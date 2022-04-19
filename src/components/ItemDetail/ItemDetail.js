@@ -1,12 +1,14 @@
 import './ItemDetail.css';
 import Counter from '../Counter/Counter';
 import { Link } from 'react-router-dom';
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import CartContext from '../Context/CartContext';
 
-const ItemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_imagen, imagenes, stock, precioOferta, setCart, cart}) => {
+const ItemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_imagen, imagenes, stock, precioOferta}) => {
 
+    const {cart, addItem, getQuantity, isInCart} = useContext(CartContext);
 
-    const [cantidad, setCantidad] = useState(0);
+    const [cantidad, setCantidad] = useState(1);
 
     const handleOnAdd = (nuevaCantidad) => {
         console.log(`Actualizar carrito sumando ${nuevaCantidad} unidades.`);
@@ -15,9 +17,12 @@ const ItemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_i
             id,
             nombre,
             precio,
-            cantidad
+            nuevaCantidad
         }
-        setCart([...cart, objProd]);
+        addItem(objProd);
+        console.log('Cantidad total es: ' + getQuantity());
+        console.log(cart);
+        console.log('El item 002 se encuentra en la lista: ' + isInCart('002'));
     }
 
     return (

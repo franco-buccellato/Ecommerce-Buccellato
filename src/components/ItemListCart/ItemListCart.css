@@ -1,0 +1,12 @@
+.container-itemList-cart {
+    width: 80%;
+    display: inline-block;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.totals-cart {
+    float: right;
+    text-align: center;
+    width: 12%;
+}

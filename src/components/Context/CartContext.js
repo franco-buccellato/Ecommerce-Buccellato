@@ -25,7 +25,7 @@ export const CartContextProvider = ({children, onAdd}) => {
     const getQuantity = () => {
         let cantidad = 0;
         cart.forEach(
-            unItem => cantidad =+ unItem.nuevaCantidad
+            unItem => cantidad += unItem.nuevaCantidad
         )
         return cantidad;
     }
@@ -39,6 +39,7 @@ export const CartContextProvider = ({children, onAdd}) => {
     }
 
     const removeItem = (itemId) => {
+        console.log("Estoy corriendo removeItem");
         cart.forEach(
             (unItem, indice) => {
                 if(unItem.id === itemId) {
@@ -48,9 +49,19 @@ export const CartContextProvider = ({children, onAdd}) => {
         )
     }
 
+    const valorTotal = () => {
+        let suma = 0;
+        cart.forEach(
+            unItem => {
+                suma += (unItem.nuevaCantidad * parseInt(unItem.precioDefinitivo.replace('.','')))
+            }
+        )
+        return suma;
+    }
+
 
     return(
-        <CartContext.Provider value={{cart, addItem, getQuantity, isInCart, clear, removeItem}}>
+        <CartContext.Provider value={{cart, addItem, getQuantity, isInCart, clear, removeItem, valorTotal}}>
             {children}
         </CartContext.Provider>
     )

@@ -1,27 +1,20 @@
 import './CartListContainer.css';
-import ItemCartList from '../ItemCartList/ItemCartList';
-import { useEffect, useState } from 'react';
-import { getCarritoListPrueba } from '../../asyncmock';
-import Loader from '../Loader/Loader';
+import ItemListCart from '../ItemListCart/ItemListCart';
+import { useContext } from 'react';
+import CartContext from '../Context/CartContext';
+import { Link } from 'react-router-dom';
 
 const CartListContainer = () => {
 
-    const [carrito, setCarrito] = useState([]);
+    const {cart} = useContext(CartContext);
 
-    useEffect(
-        () => {
-            getCarritoListPrueba().then(
-                listaProductos => {
-                    setCarrito(listaProductos)
-                }
-            )
-        }, []
-    )
+    console.log("El cart tiene: " + cart.length);
 
     return (
+        
         <div className="cart-container">
             {
-                carrito.length > 0 ? <ItemCartList carrito={carrito}/> : <Loader />
+                cart.length > 0 ? <ItemListCart/> : <Link to = {'/'}><h1 className='container-return'>Volver a inicio</h1></Link>
             }
         </div>
     );

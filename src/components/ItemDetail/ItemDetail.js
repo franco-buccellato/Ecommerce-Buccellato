@@ -8,16 +8,18 @@ const ItemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_i
 
     const {cart, addItem, getQuantity, isInCart} = useContext(CartContext);
 
-    const [cantidad, setCantidad] = useState(1);
+    const [cantidad, setCantidad] = useState(0);
 
     const handleOnAdd = (nuevaCantidad) => {
         console.log(`Actualizar carrito sumando ${nuevaCantidad} unidades.`);
         setCantidad(nuevaCantidad);
+        const precioDefinitivo = precioOferta === '' ? precio : precioOferta;
         const objProd = {
             id,
             nombre,
-            precio,
-            nuevaCantidad
+            precioDefinitivo,
+            nuevaCantidad,
+            link_imagen
         }
         addItem(objProd);
         console.log('Cantidad total es: ' + getQuantity());
@@ -37,7 +39,7 @@ const ItemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_i
                             <ul>
                                 {
                                     imagenes.map(
-                                        unaImagen => {return <li><img src={unaImagen} alt="Imagen secundaria"></img></li>}
+                                        (unaImagen, index) => {return <li key={index}><img src={unaImagen} alt="Imagen secundaria"></img></li>}
                                     )
                                 }
                             </ul>

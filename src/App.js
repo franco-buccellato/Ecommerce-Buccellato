@@ -22,7 +22,7 @@ function App() {
   return (
     <CartContextProvider onAdd={handleOnAdd}>
       <BrowserRouter>
-        <NavBar cantidadCarrito={cantidad}/>
+        <NavBar/>
         <Routes>
           <Route exact path = '/' element = {<ItemListContainer/>}/>
           <Route exact path = '/categoria' element = {<CategoriaListContainer/>}/>

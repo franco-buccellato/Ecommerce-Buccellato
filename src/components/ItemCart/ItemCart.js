@@ -1,34 +1,32 @@
 import './ItemCart.css';
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import CartContext from '../Context/CartContext';
 
-const ItemCart = ({id, nombre, marca, talle, descripcion_breve, precio, link_imagen, cantidad, categoria}) => {
+const ItemCart = ({id, nombre, descripcion_breve, precioDefinitivo, link_imagen, nuevaCantidad}) => {
+
+    precioDefinitivo = precioDefinitivo.replace('.','');
+    const total = parseInt(precioDefinitivo) * nuevaCantidad;
+    
+    const {removeItem} = useContext(CartContext);
+
     return (
-        <div className="container-item">
-            <div className="container page-wrapper">
-                <div className="page-inner">
-                    <div className="row">
-                        <div className="el-wrapper">
-                            <div className="box-up">
-                                <img className="img" src={link_imagen} alt={nombre}></img>
-                                <div className="img-info">
-                                <div className="info-inner">
-                                    <span className="p-name">{nombre}</span>
-                                    <span className="p-company">{categoria}</span>
-                                </div>
-                                <div className="a-size">{descripcion_breve}</div>
-                                </div>
-                            </div>
-                            <div className="box-down">
-                                <div className="h-bg">
-                                    <div className="h-bg-inner"></div>
-                                </div>
-                                <div className="cart" href="#">
-                                    <span className="price">${precio}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div className="shopping-cart-list-container">
+            <div className="product-cart-list">
+                <div className="product-image-cart-list">
+                    <img className="img-cart-list" src={link_imagen} alt={id}></img>
                 </div>
+                <div className="product-details-cart-list">
+                    <div className="product-title-cart-list">{nombre}</div>
+                    <p className="product-description-cart-list">{descripcion_breve}</p>
+                </div>
+                <div className="product-price-cart-list">${precioDefinitivo}</div>
+                <div className="product-quantity-cart-list">
+                    <span>{nuevaCantidad}</span>
+                </div>
+                <div className="product-removal-cart-list">
+                    <div className='remove-product-cart-list' onClick={() => removeItem(id)}>Eliminar</div>
+                </div>
+                <div className="product-line-price-cart-list">${total}</div>
             </div>
         </div>
     );

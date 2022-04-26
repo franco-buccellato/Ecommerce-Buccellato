@@ -17,6 +17,9 @@ img {
     filter: drop-shadow(1px 1px 3px #b7b7b7);
 }
 
+.container-categoria {
+    padding-bottom: 150px;
+}
 
 .container-item-detail  {
     padding: 150px 0;
@@ -28,7 +31,7 @@ img {
     margin: auto;
     padding: 2.5em 0;
     width: 50%;
-    min-width: 400px;
+    min-width: 200px;
     background-color: white;
     border-radius: 5px;
 }
@@ -50,10 +53,12 @@ img {
     border-radius: 6px 6px 0 0;
     background-color: #34D2AF;
     background: radial-gradient(#74ffe1, #34D2AF);
+    height: 300px;
 }
 
 .photo-main img {
     border-radius: 6px;
+    height: 300px;
 }
 
 .photo-main .controls {

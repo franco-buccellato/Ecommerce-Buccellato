@@ -76,6 +76,10 @@ background-color: #e9e9e9;
     left: 40%;
 }
 
+.el-wrapper:hover .p-company {
+    color: #FFF;
+}
+
 .el-wrapper:hover .img {
 webkit-filter: blur(7px);
 -o-filter: blur(7px);
@@ -166,6 +170,7 @@ bottom: 25px;
 display: block;
 }
 
+
 .info-inner .p-name {
     display: inline-block;
     align-items: center;
@@ -185,6 +190,7 @@ font-size: 12px;
 text-transform: uppercase;
 color: #8c8c8c;
 font-weight: 700;
+padding-top: 5px;
 }
 
 .a-size {

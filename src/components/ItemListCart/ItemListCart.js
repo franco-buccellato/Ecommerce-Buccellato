@@ -5,7 +5,7 @@ import CartContext from '../Context/CartContext';
 
 const ItemListCart = () => {
 
-    const {cart, valorTotal} = useContext(CartContext);
+    const {cart, valorTotal, clear} = useContext(CartContext);
 
     return (
         <div className="container-itemList-cart">
@@ -19,6 +19,9 @@ const ItemListCart = () => {
                     <label className="product-line-price-cart-list">Total</label>
                 </div>
                 {cart.map(itemCarrito => <ItemCart key={itemCarrito.id} {...itemCarrito}/>)}
+            </div>
+            <div className="clear-cart">
+                <ion-icon name="trash-outline" onClick={() => clear()}></ion-icon>
             </div>
             <div className="totals-cart">
                     <span>Total</span>

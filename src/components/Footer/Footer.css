@@ -19,6 +19,7 @@
     display: inline-block;
 }
 
-.footer-distributed a:hover {
-    background-color: #fff;
+.logo-linkedin {
+    height: 70px;
+    padding: 10px;
 }

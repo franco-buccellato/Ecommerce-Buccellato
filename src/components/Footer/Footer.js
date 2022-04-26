@@ -6,7 +6,10 @@ function Footer() {
         
         <div className="footer-container">
             <footer className="footer-distributed">
-                    <p>Franco Buccellato &copy; 2022</p><a href='https://www.linkedin.com/in/franco-buccellato-395961a7/'><ion-icon name="logo-linkedin"></ion-icon></a>
+                <p>Diseñado y Desarollado por Franco Buccellato &copy; 2022</p>
+                <a href='https://www.linkedin.com/in/franco-buccellato-395961a7/'>
+                    <img className='logo-linkedin' src = "https://cdn-icons-png.flaticon.com/512/174/174857.png"></img>
+                </a>
             </footer>
         </div>
     );

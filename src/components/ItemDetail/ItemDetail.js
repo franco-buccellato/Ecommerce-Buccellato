@@ -6,12 +6,11 @@ import CartContext from '../Context/CartContext';
 
 const ItemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_imagen, imagenes, stock, precioOferta}) => {
 
-    const {cart, addItem, getQuantity, isInCart} = useContext(CartContext);
+    const {addItem} = useContext(CartContext);
 
     const [cantidad, setCantidad] = useState(0);
 
     const handleOnAdd = (nuevaCantidad) => {
-        console.log(`Actualizar carrito sumando ${nuevaCantidad} unidades.`);
         setCantidad(nuevaCantidad);
         const precioDefinitivo = precioOferta === '' ? precio : precioOferta;
         const objProd = {
@@ -22,9 +21,6 @@ const ItemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_i
             link_imagen
         }
         addItem(objProd);
-        console.log('Cantidad total es: ' + getQuantity());
-        console.log(cart);
-        console.log('El item 002 se encuentra en la lista: ' + isInCart('002'));
     }
 
     return (

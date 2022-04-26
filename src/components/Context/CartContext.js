@@ -39,13 +39,10 @@ export const CartContextProvider = ({children, onAdd}) => {
     }
 
     const removeItem = (itemId) => {
-        console.log("Estoy corriendo removeItem");
-        cart.forEach(
-            (unItem, indice) => {
-                if(unItem.id === itemId) {
-                    cart.splice(indice, 1);
-                }
-            }
+        setCart(
+            cart.filter(
+                unItem => unItem.id !== itemId
+            )
         )
     }
 

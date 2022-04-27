@@ -1,9 +1,10 @@
 import './ItemDetailContainer';
 import { useEffect, useState } from 'react';
-import { getProductoById } from '../../asyncmock';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Loader from '../Loader/Loader';
 import { useParams } from 'react-router-dom';
+import { firestoreDB } from '../../services/firebase';
+import {getDoc, doc} from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
 
@@ -13,9 +14,10 @@ const ItemDetailContainer = () => {
 
     useEffect(
         () => {
-            getProductoById(productId).then(
-                producto => {
-                    setProducto(producto)
+            getDoc(doc(firestoreDB, 'listaDeProductos', productId)).then(
+                response => {
+                    const product = {id : response.id, ...response.data()}
+                    setProducto(product);
                 }
             )
         }, [productId]

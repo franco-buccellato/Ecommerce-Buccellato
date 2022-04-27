@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { getCategorias } from '../../asyncmock';
 import Loader from '../Loader/Loader';
 import CategoriaList from '../CategoriaList/CategoriaList';
+import {getDocs, collection} from 'firebase/firestore'
+import { firestoreDB } from '../../services/firebase';
 
 const CategoriaListContainer = () => {
 
@@ -9,9 +10,21 @@ const CategoriaListContainer = () => {
 
     useEffect(
         () => {
-            getCategorias().then(
+/*             getCategorias().then(
                 categorias => {
                     setCategorias(categorias)
+                }
+            ) */
+        getDocs(collection(firestoreDB, 'listCategorias'))
+            .then(
+                response => {
+                    const listaCategorias = response.docs.map(
+                        doc => {
+                            return {id: doc.id, ...doc.data()}
+                        }
+                    )
+                    console.log(listaCategorias);
+                    setCategorias(listaCategorias);
                 }
             )
         }, []

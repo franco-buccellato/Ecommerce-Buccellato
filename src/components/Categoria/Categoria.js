@@ -1,10 +1,10 @@
 import './Categoria.css';
 import { Link } from 'react-router-dom';
 
-const Categoria = ({categoriaId, link_imagen, descripcion}) => {
+const Categoria = ({id, link_imagen, descripcion}) => {
 
     return (
-        <Link to ={`/categoria/${categoriaId}`}>
+        <Link to ={`/categoria/${id}`}>
             <div className="container-item-detail">
                 <div className="product">
                     <div className="product__photo">
@@ -16,7 +16,7 @@ const Categoria = ({categoriaId, link_imagen, descripcion}) => {
                     </div>
                     <div className="product__info">
                         <div className="description">
-                            <h3>{categoriaId}</h3>
+                            <h3>{id}</h3>
                             <span>{descripcion}</span>
                         </div>
                     </div>

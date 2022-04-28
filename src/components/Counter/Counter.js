@@ -10,7 +10,7 @@ const Counter = ({inicial, maximoStock, onAdd}) => {
     useEffect(() => {
         console.log('Se modifico el count.')
     },
-    [count] //Escucha evento de montaje
+    [count]
     )
 
     const decrement = () => {

@@ -8,8 +8,6 @@ const CartListContainer = () => {
 
     const {cart} = useContext(CartContext);
 
-    console.log("El cart tiene: " + cart.length);
-
     return (
         
         <div className="cart-container">

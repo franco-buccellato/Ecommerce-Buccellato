@@ -10,11 +10,6 @@ const CategoriaListContainer = () => {
 
     useEffect(
         () => {
-/*             getCategorias().then(
-                categorias => {
-                    setCategorias(categorias)
-                }
-            ) */
         getDocs(collection(firestoreDB, 'listCategorias'))
             .then(
                 response => {
@@ -23,7 +18,6 @@ const CategoriaListContainer = () => {
                             return {id: doc.id, ...doc.data()}
                         }
                     )
-                    console.log(listaCategorias);
                     setCategorias(listaCategorias);
                 }
             )

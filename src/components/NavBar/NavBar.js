@@ -5,17 +5,14 @@ import {Link} from 'react-router-dom';
 
 function NavBar({cantidadCarrito}) {
 
-    //Defino como constante la lista de iconos
     const navBarList = document.querySelectorAll('.list');
 
     animarNavigation();
 
     function animarNavigation() {
-        //Esuchco el evento click sobre los iconos y llamo a la funcion creada previamente
         navBarList.forEach((item) => item.addEventListener('click', activeLink));
     }
 
-    //Creo la funcion para activar 1 icono y desactivar los demas
     function activeLink() {
         navBarList.forEach((item) => item.classList.remove('active'));
         this.classList.add('active');

@@ -260,42 +260,6 @@ const listCategorias = [
 ]
 
 
-const carritoListPrueba = [
-    {
-        id: '001',
-        nombre : "Prueba 1",
-        marca : 'Marca Prueba 1',
-        talle : 'P1',
-        descripcion_breve : "Descripcion de Carrito item List 1",
-        precio : "105.000",
-        link_imagen : 'https://http2.mlstatic.com/D_NQ_NP_2X_953407-MLA49388153248_032022-F.webp',
-        cantidad : 1,
-        categoria: 'CASCO'
-    },
-    {
-        id: '002',
-        nombre : "Prueba 2",
-        marca : 'Marca Prueba 2',
-        talle : 'P2',
-        descripcion_breve : "Descripcion de Carrito item List 2",
-        precio : "105.000",
-        link_imagen : 'https://http2.mlstatic.com/D_NQ_NP_2X_953407-MLA49388153248_032022-F.webp',
-        cantidad : 2,
-        categoria: 'CASCO'
-    },
-    {
-        id: '003',
-        nombre : "Prueba 3",
-        marca : 'Marca Prueba 3',
-        talle : 'P3',
-        descripcion_breve : "Descripcion de Carrito item List 3",
-        precio : "105.000",
-        link_imagen : 'https://http2.mlstatic.com/D_NQ_NP_2X_953407-MLA49388153248_032022-F.webp',
-        cantidad : 3,
-        categoria: 'CASCO'
-    }
-]
-
 export const getProductos = (categoriaId) => {
     return new Promise (
         resolve => {

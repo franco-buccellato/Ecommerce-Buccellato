@@ -10,11 +10,14 @@ import { firestoreDB } from '../../services/firebase';
 const ItemListContainer = () => {
 
     const [productos, setProductos] = useState([]);
+    const [loading, setLoading] = useState([true]);
 
     const {categoriaId} = useParams();
 
     useEffect(
         () => {
+            setLoading(true);
+
             const collectionRef =  categoriaId ?
                 query(
                     collection(firestoreDB, 'listaDeProductos'),
@@ -32,6 +35,16 @@ const ItemListContainer = () => {
                             }
                         )
                         setProductos(products);
+                    }
+                )
+                .catch(
+                    error => {
+                        console.log(error);
+                    }
+                )
+                .finally(
+                    () => {
+                        setLoading(false)
                     }
                 )
         }, [categoriaId]

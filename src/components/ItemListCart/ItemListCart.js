@@ -1,11 +1,88 @@
 import './ItemListCart.css';
 import ItemCart from '../ItemCart/ItemCart';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import CartContext from '../Context/CartContext';
+import {addDoc, collection, getDocs, query, where, writeBatch, documentId} from 'firebase/firestore'
+import { firestoreDB } from '../../services/firebase';
 
 const ItemListCart = () => {
 
     const {cart, valorTotal, clear} = useContext(CartContext);
+
+    const [loading, setLoading] = useState(false);
+
+    const createOrder = () => {
+        setLoading(true);
+
+        const objOrder = {
+            items : cart,
+            buyer : {
+                name : 'Franco',
+                phone : '1122334455',
+                mail : 'franco@gmail.com'
+            },
+            total : valorTotal(),
+            date : new Date()
+        }
+
+        const idsCart = cart.map(producto => producto.id);
+
+        const batch = writeBatch(firestoreDB);
+
+        const colletionRefStock = collection(firestoreDB, 'listaDeProductos');
+
+        const productosSinStock = [];
+        
+        getDocs(query(colletionRefStock, where(documentId(), 'in', idsCart)))
+        .then(
+            response => {
+                response.docs.forEach(
+                    documento => {
+                        const data = documento.data()
+                        const cantidadProducto = cart.find(
+                            unProducto => unProducto.id === documento.id
+                        )?.nuevaCantidad;
+                        if(data.stock >= cantidadProducto) {
+                            batch.update(
+                                documento.ref,
+                                {stock : data.stock - cantidadProducto}
+                            )
+                        } else {
+                            productosSinStock.push({id: documento.id, ...data});
+                        }
+                    }
+                )
+            }
+        )
+        .then( 
+            () => {
+                if(productosSinStock.length === 0) {
+                    const collectionRef = collection(firestoreDB, 'orders');
+                    return addDoc(collectionRef, objOrder);
+                } else {
+                    console.log('Hay productos en su pedido que no poseen stock');
+                    return Promise.reject({name : 'productosSinStock', produsctos : productosSinStock});
+                }
+            }
+        ).then(
+            ({id}) => {
+                batch.commit();
+                console.log('El id de la neuva orden es: ' + id);
+            }
+        ).catch(
+            error => {
+                console.log(error);
+            }
+        ).finally(
+            () => {
+                setLoading(false);
+            }
+        )
+    }
+
+    if(loading) {
+        return <h1>Se esta cargando su orden.</h1>;
+    }
 
     return (
         <div className="container-itemList-cart">
@@ -20,12 +97,22 @@ const ItemListCart = () => {
                 </div>
                 {cart.map(itemCarrito => <ItemCart key={itemCarrito.id} {...itemCarrito}/>)}
             </div>
-            <div className="clear-cart">
-                <ion-icon name="trash-outline" onClick={() => clear()}></ion-icon>
-            </div>
+            
             <div className="totals-cart">
-                    <span>Total</span>
-                    <div className="totals-value-cart">${valorTotal()}</div>
+                <span>Total</span>
+                <div className="totals-value-cart">${valorTotal()}</div>
+                <div className="clear-cart">
+                    <div className='order-product-cart-list' onClick={() => createOrder()}>
+                        <span>Ordenar</span>
+                        <ion-icon name="cash-outline"></ion-icon>
+                    </div>
+                </div>
+                <div className="clear-cart">
+                    <div className='remove-product-cart-list' onClick={() => clear()}>
+                    <span>Vaciar</span>
+                    <ion-icon name="trash-outline"></ion-icon>
+                    </div>
+                </div>
             </div>
         </div>
     );

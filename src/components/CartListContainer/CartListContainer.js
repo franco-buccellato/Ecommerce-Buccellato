@@ -12,7 +12,7 @@ const CartListContainer = () => {
         
         <div className="cart-container">
             {
-                cart.length > 0 ? <ItemListCart/> : <Link to = {'/'}><h1 className='container-return'>Volver a inicio</h1></Link>
+                cart.length > 0 ? <ItemListCart/> : <Link to = {'/'}><h1 className='container-return'>El carrito esta vacío, volver a inicio</h1></Link>
             }
         </div>
     );

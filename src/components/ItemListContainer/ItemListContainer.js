@@ -50,6 +50,10 @@ const ItemListContainer = () => {
         }, [categoriaId]
     )
 
+    if(loading) {
+        return <Loader/>;
+    }
+
     return (
         <div className="container">
             {

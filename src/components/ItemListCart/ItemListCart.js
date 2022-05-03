@@ -4,13 +4,14 @@ import { useContext, useState } from 'react';
 import CartContext from '../Context/CartContext';
 import {addDoc, collection, getDocs, query, where, writeBatch, documentId} from 'firebase/firestore'
 import { firestoreDB } from '../../services/firebase';
+import { Link } from 'react-router-dom';
 
 const ItemListCart = () => {
 
     const {cart, valorTotal, clear} = useContext(CartContext);
 
     const [loading, setLoading] = useState(false);
-
+    
     const createOrder = () => {
         setLoading(true);
 
@@ -67,7 +68,7 @@ const ItemListCart = () => {
         ).then(
             ({id}) => {
                 batch.commit();
-                console.log('El id de la neuva orden es: ' + id);
+                console.log('El id de la nueva orden es: ' + id);
             }
         ).catch(
             error => {
@@ -76,12 +77,13 @@ const ItemListCart = () => {
         ).finally(
             () => {
                 setLoading(false);
+                clear();
             }
         )
     }
 
     if(loading) {
-        return <h1>Se esta cargando su orden.</h1>;
+        return <h1 className='container-return'>Su orden esta siendo procesada.....</h1>;
     }
 
     return (

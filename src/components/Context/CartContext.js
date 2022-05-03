@@ -6,6 +6,8 @@ export const CartContextProvider = ({children, onAdd}) => {
 
     const [cart, setCart] = useState([]);
 
+    const [user, setUser] = useState();
+
     const addItem = (productAdd) => {
         if(isInCart(productAdd.id)) {
             cart.forEach(
@@ -58,7 +60,7 @@ export const CartContextProvider = ({children, onAdd}) => {
 
 
     return(
-        <CartContext.Provider value={{cart, addItem, getQuantity, isInCart, clear, removeItem, valorTotal}}>
+        <CartContext.Provider value={{cart, addItem, getQuantity, isInCart, clear, removeItem, valorTotal, user, setUser}}>
             {children}
         </CartContext.Provider>
     )

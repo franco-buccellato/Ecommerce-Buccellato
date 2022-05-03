@@ -4,11 +4,10 @@ import { useContext, useState } from 'react';
 import CartContext from '../Context/CartContext';
 import {addDoc, collection, getDocs, query, where, writeBatch, documentId} from 'firebase/firestore'
 import { firestoreDB } from '../../services/firebase';
-import { Link } from 'react-router-dom';
 
 const ItemListCart = () => {
 
-    const {cart, valorTotal, clear} = useContext(CartContext);
+    const {cart, valorTotal, clear, user} = useContext(CartContext);
 
     const [loading, setLoading] = useState(false);
     
@@ -17,11 +16,7 @@ const ItemListCart = () => {
 
         const objOrder = {
             items : cart,
-            buyer : {
-                name : 'Franco',
-                phone : '1122334455',
-                mail : 'franco@gmail.com'
-            },
+            buyer : user,
             total : valorTotal(),
             date : new Date()
         }
@@ -59,6 +54,10 @@ const ItemListCart = () => {
             () => {
                 if(productosSinStock.length === 0) {
                     const collectionRef = collection(firestoreDB, 'orders');
+
+                    //Llenar el objOrder
+
+
                     return addDoc(collectionRef, objOrder);
                 } else {
                     console.log('Hay productos en su pedido que no poseen stock');

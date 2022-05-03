@@ -6,6 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Nosotros from './components/Nosotros/Nosotros';
 import Contacto from './components/Contacto/Contacto';
+import Form from './components/Form/Form';
 import CategoriaListContainer from './components/CategoriaListContainer/CategoriaListContainer';
 import Footer from './components/Footer/Footer';
 import CartListContainer from './components/CartListContainer/CartListContainer';
@@ -32,6 +33,7 @@ function App() {
           <Route exact path = '/contacto' element = {<Contacto/>}/>
           <Route exact path = '/carrito' element = {<CartListContainer/>}/>
           <Route exact path = '/detail/:productId' element = {<ItemDetailContainer/>}/>
+          <Route exact path = '/form' element = {<Form/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

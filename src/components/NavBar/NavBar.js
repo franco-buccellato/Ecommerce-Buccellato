@@ -59,22 +59,22 @@ function NavBar({cantidadCarrito}) {
                         </Link>
                     </li>
                     <li className="list">
-                        <Link to = {'/nosotros'}>
-                            <div>
-                                <span className="icon">
-                                    <ion-icon name="people-outline"></ion-icon>
-                                </span>
-                                <span className="text">Nosotros</span>
-                            </div>
-                        </Link>
-                    </li>
-                    <li className="list">
                         <Link to = {'/contacto'}>
                             <div>
                                 <span className="icon">
                                     <ion-icon name="call-outline"></ion-icon>
                                 </span>
                                 <span className="text">Contacto</span>
+                            </div>
+                        </Link>
+                    </li>
+                    <li className="list">
+                        <Link to = {'/usuario'}>
+                            <div>
+                                <span className="icon">
+                                    <ion-icon name="people-outline"></ion-icon>
+                                </span>
+                                <span className="text">Usuario</span>
                             </div>
                         </Link>
                     </li>

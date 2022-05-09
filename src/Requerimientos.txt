@@ -1,13 +1,2 @@
-👉El desafio de hoy, y el de la clase que viene son mas que nada de Firebase.
-
-👉Estos por suerte estan bien explicados en la ppt, y tambien en la clase casi que lo hicimos.
-
-👉Paso un mini resumen, y si tienen algun problema me avisan:
-
-1- Ingresar a firebase y subir todos los productos. Crear la App y obtener lo que son las keys y el firebaseConfig
-
-2- Instalar firebase en nuestro proyecto (npm install firebase)
-
-3- Crear la carpeta service y crear el archivo index.js (en este van las keys /firebaseConfig)
-
-4- Cambiar el asyncMock por las funciones de firebase.
+Tene en cuenta para la entrega final de cumplir con todos los puntos que dice las rubricas de evaluación:
+https://drive.google.com/drive/u/0/folders/1fzgJvd1XQG8JjObIqmA-SjkdK64WFBkW

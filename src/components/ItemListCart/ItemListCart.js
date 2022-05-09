@@ -4,12 +4,15 @@ import { useContext, useState } from 'react';
 import CartContext from '../Context/CartContext';
 import {addDoc, collection, getDocs, query, where, writeBatch, documentId} from 'firebase/firestore'
 import { firestoreDB } from '../../services/firebase';
+import OrdenItemList from '../OrdenItemList/OrdenItemList';
 
 const ItemListCart = () => {
 
     const {cart, valorTotal, clear, user} = useContext(CartContext);
 
     const [loading, setLoading] = useState(false);
+
+    const [orden, setOrden] = useState();
     
     const createOrder = () => {
         setLoading(true);
@@ -54,10 +57,6 @@ const ItemListCart = () => {
             () => {
                 if(productosSinStock.length === 0) {
                     const collectionRef = collection(firestoreDB, 'orders');
-
-                    //Llenar el objOrder
-
-
                     return addDoc(collectionRef, objOrder);
                 } else {
                     console.log('Hay productos en su pedido que no poseen stock');
@@ -76,13 +75,23 @@ const ItemListCart = () => {
         ).finally(
             () => {
                 setLoading(false);
-                clear();
+                setOrden(objOrder);
             }
         )
     }
 
+    const restarCart = () => {
+        console.log("Clear cart y orden.");
+        clear();
+        setOrden();
+    }
+
     if(loading) {
         return <h1 className='container-return'>Su orden esta siendo procesada.....</h1>;
+    }
+
+    if(orden != null) {
+        return <OrdenItemList orden={orden} onAdd={restarCart}/>
     }
 
     return (
@@ -94,7 +103,7 @@ const ItemListCart = () => {
                     <label className="product-price-cart-list">Precio</label>
                     <label className="product-quantity-cart-list">Cantidad</label>
                     <label className="product-removal-cart-list">Eliminar</label>
-                    <label className="product-line-price-cart-list">Total</label>
+                    <label className="product-line-price-cart-list">Sub-Total</label>
                 </div>
                 {cart.map(itemCarrito => <ItemCart key={itemCarrito.id} {...itemCarrito}/>)}
             </div>

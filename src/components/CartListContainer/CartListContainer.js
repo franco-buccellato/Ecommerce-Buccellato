@@ -12,8 +12,8 @@ const CartListContainer = () => {
         
         <div className="cart-container">
             {
-                user == null ? <Link to = {'/form'}><h1 className='container-return'>Primero necesitamos alguno de sus datos. ¡Click Aqui!</h1></Link> :
-                cart.length > 0 ? <ItemListCart/> : <Link to = {'/'}><h1 className='container-return'>El carrito esta vacío, volver a inicio.</h1></Link>
+                user == null ? <Link to = {'/form'}><div className='container-return'><h1 className='container-cargar-datos'>Primero necesitamos alguno de sus datos. ¡Click Aqui!</h1></div></Link> :
+                cart.length > 0 ? <ItemListCart/> : <Link to = {'/'}><div className='container-return'><h1 className='container-return-inicio'>El carrito esta vacío, volver a inicio.</h1></div></Link>
             }
         </div>
     );

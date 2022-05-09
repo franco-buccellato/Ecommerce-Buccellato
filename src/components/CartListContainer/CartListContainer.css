@@ -30,6 +30,33 @@
     justify-content: center;
     flex-direction: row;
     padding-top: 150px;
-    padding-bottom: 100px;
+    padding-bottom: 150px;
     text-decoration: none;
+}
+
+.container-cargar-datos {
+    color: #34D2AF;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 50px;
+    border: dashed 10px;
+}
+
+.container-return-inicio {
+    color: #34D2AF;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 50px;
+    border: dashed 10px;
+}
+
+.container-return-button {
+    color: #34D2AF;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 50px;
+    border: dashed 10px;
 }

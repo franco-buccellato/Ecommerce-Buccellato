@@ -67,7 +67,7 @@ const ItemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_i
                         <h3>Decripción</h3>
                         <span>{descripcion_breve}</span>
                     </div>
-                    <Counter inicial={1} maximoStock={stock} onAdd={handleOnAdd}/>
+                    {(stock > 0) && <Counter inicial={1} maximoStock={stock} onAdd={handleOnAdd}/>}
                     {(cantidad > 0) && <Link className='boton-carrito' to ={`/carrito`}>Ir al Carrito</Link>}
                 </div>
             </div>

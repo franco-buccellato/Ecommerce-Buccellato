@@ -119,6 +119,16 @@
 .checkout-cart-list:hover {
     background-color: #494;
 }
+
+
+@media screen and (max-width: 1300px) {
+    .product-details-cart-list {
+        display:none;
+    }
+    .shopping-cart-list {
+        width: 100%;
+    }
+}
 /* Make adjustments for tablet */
 @media screen and (max-width: 650px) {
     .shopping-cart-list-cart-list {

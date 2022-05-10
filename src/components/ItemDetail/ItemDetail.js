@@ -27,8 +27,8 @@ const ItemDetail = ({id, nombre, marca, talle, descripcion_breve, precio, link_i
         <div className="container-item-detail">
             <div className="product">
                 <div className="product__photo">
-                    <div className="photo-container">
-                        <div className="photo-main">
+                    <div className="photo-container-detail">
+                        <div className="photo-main-detail">
                             <img src={link_imagen} alt="Imagen principal"></img>
                         </div>
                         <div className="photo-album">

@@ -9,7 +9,7 @@ const Categoria = ({id, link_imagen, descripcion}) => {
                 <div className="product">
                     <div className="product__photo">
                         <div className="photo-container">
-                            <div className="photo-main">
+                            <div className="photo-main-categoria">
                                 <img src={link_imagen} alt="Imagen principal"></img>
                             </div>
                         </div>

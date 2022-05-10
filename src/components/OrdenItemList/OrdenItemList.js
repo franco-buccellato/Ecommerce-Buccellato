@@ -27,7 +27,7 @@ const OrdenItemList = ({orden, onAdd}) => {
                 <div className="totals-value-cart">${orden.total}</div>
             </div>
             <div className="seguir-comprando" onClick={() => vaciarCarrito()}>
-                <Link to = {'/'}><div className='container-return'><h1 className='container-return-button'>Click Aqui para segui comprado</h1></div></Link>
+                <Link to = {'/'}><div className='container-return'><h1 className='container-return-button'>¡Click Aqui! para seguir comprado.</h1></div></Link>
             </div>
         </div>
     );

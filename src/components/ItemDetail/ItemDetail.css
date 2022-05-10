@@ -36,7 +36,7 @@ img {
 .product__photo {
     position: relative;
 }
-.photo-container {
+.photo-container-detail {
     position: absolute;
     left: -2.5em;
     display: grid;
@@ -46,26 +46,41 @@ img {
     border-radius: 6px;
     box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
 }
-.photo-main {
+
+@media screen and (max-width: 800px) {
+    .photo-container-detail {
+        display:none;
+    }
+}
+
+.photo-main-detail {
     border-radius: 6px 6px 0 0;
     background-color: #34D2AF;
     background: radial-gradient(#74ffe1, #34D2AF);
 }
 
-.photo-main img {
-    border-radius: 6px;
+@media screen and (max-width: 1300px) {
+    .photo-album {
+        display:none;
+    }
 }
 
-.photo-main .controls {
+.photo-main-detail img {
+    display: block;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.photo-main-detail .controls {
     display: flex;
     justify-content: space-between;
     padding: 0.8em;
     color: #fff;
 }
-.photo-main .controls i {
+.photo-main-detail .controls i {
     cursor: pointer;
 }
-.photo-main img {
+.photo-main-detail img {
     position: absolute;
     left: -3.5em;
     top: 2em;
@@ -198,5 +213,5 @@ footer a:hover {
     background-color: #34D2AF;
     box-shadow: 2px 2px 25px -7px --clr;
     cursor: pointer;
-    width: 50%;
+    width: 70%;
 }

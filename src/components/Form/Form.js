@@ -8,22 +8,21 @@ const Form = () => {
     const {user, setUser} = useContext(CartContext);
 
     const cargarDatosUsuario = () => {
-        const nuevoUsuario = {
-        /*             
-            name : document.getElementById("nombre"),
-            telefono : document.getElementById('telefono'),
-            mail : document.getElementById('mail') 
-        */
-            name : 'Franco',
-            telefono : '1122334455',
-            mail : 'franco@gmail.com'
+
+        let nombre = document.getElementById("nombre").value;
+        let telefono = document.getElementById('telefono').value;
+        let email = document.getElementById("telefono").value;
+
+        const nuevoUsuario = {         
+            name : nombre,
+            telefono : telefono,
+            mail : email
         }
-        console.log(nuevoUsuario);
         setUser(nuevoUsuario);
     }
 
     if(user != null) {
-        return <Link to = {'/carrito'}><h1 className='container-return'>Muchas gracias por su tiempo. ¡Click aqui para seguir co su compra!</h1></Link>
+        return <Link to = {'/carrito'}><div className='container-return'><h1 className='container-return-button'>Muchas gracias por su tiempo. ¡Click aqui para seguir con su compra!</h1></div></Link>
     }
 
     return (

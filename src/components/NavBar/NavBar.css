@@ -178,3 +178,9 @@ body {
 .navigation ul li:nth-child(7).active ~ .indicator {
     transform: translateX(calc(70px * 6));
 }
+
+@media screen and (max-width: 1000px) {
+    .container-logo-marca {
+        display:none;
+    }
+}

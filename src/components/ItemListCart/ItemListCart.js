@@ -113,13 +113,13 @@ const ItemListCart = () => {
                 <div className="totals-value-cart">${valorTotal()}</div>
                 <div className="clear-cart">
                     <div className='order-product-cart-list' onClick={() => createOrder()}>
-                        <span>Ordenar</span>
+                        <span>Crear Orden </span>
                         <ion-icon name="cash-outline"></ion-icon>
                     </div>
                 </div>
                 <div className="clear-cart">
                     <div className='remove-product-cart-list' onClick={() => clear()}>
-                    <span>Vaciar</span>
+                    <span>Vaciar Carrito </span>
                     <ion-icon name="trash-outline"></ion-icon>
                     </div>
                 </div>

@@ -7,14 +7,14 @@ const Categoria = ({id, link_imagen, descripcion}) => {
         <Link to ={`/categoria/${id}`}>
             <div className="container-item-detail">
                 <div className="product">
-                    <div className="product__photo">
+                    <div className="product-photo">
                         <div className="photo-container">
                             <div className="photo-main-categoria">
                                 <img src={link_imagen} alt="Imagen principal"></img>
                             </div>
                         </div>
                     </div>
-                    <div className="product__info">
+                    <div className="product-info">
                         <div className="description">
                             <h3>{id}</h3>
                             <span>{descripcion}</span>

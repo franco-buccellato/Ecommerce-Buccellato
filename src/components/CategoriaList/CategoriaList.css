@@ -6,3 +6,7 @@
     flex-wrap: wrap;
     position: relative;
 }
+
+.item-list-container {
+    display: inline-flex;
+}

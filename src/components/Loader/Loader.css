@@ -1,7 +1,9 @@
 .loader-container {
+    display: inline-flex;
     padding-top: 100px;
     text-align: center;
     align-items: center;
+    width: 100%;
 }
 
 .loader{

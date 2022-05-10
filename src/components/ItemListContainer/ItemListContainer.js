@@ -51,13 +51,19 @@ const ItemListContainer = () => {
     )
 
     if(loading) {
-        return <Loader/>;
+        return (
+            <div className="item-list-container">
+            {
+                <Loader/>
+            }
+            </div>
+        )
     }
 
     return (
-        <div className="container">
+        <div className="item-list-container">
             {
-                productos.length > 0 ? <ItemList productos={productos}/> : <Loader />
+                productos.length > 0 ? <ItemList productos={productos}/> : <Loader/>
             }
         </div>
     );

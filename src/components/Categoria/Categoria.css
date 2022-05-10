@@ -18,6 +18,7 @@ img {
 }
 
 .container-categoria {
+    display: inline-flex;
     padding-bottom: 150px;
 }
 

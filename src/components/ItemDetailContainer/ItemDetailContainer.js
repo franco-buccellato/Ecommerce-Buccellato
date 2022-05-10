@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
     )
 
     return (
-        <div className="container-itemDetail">
+        <div className="container-item-detail-container">
             {
                 producto?<ItemDetail key={producto.id} {...producto}/> : <Loader />
             }

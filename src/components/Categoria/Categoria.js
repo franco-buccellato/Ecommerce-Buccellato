@@ -5,7 +5,7 @@ const Categoria = ({id, link_imagen, descripcion}) => {
 
     return (
         <Link to ={`/categoria/${id}`}>
-            <div className="container-item-detail">
+            <div className="container-categoria-detail">
                 <div className="product">
                     <div className="product-photo">
                         <div className="photo-container">

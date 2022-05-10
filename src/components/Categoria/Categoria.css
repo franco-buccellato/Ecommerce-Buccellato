@@ -3,7 +3,7 @@
     padding-bottom: 150px;
 }
 
-.container-item-detail  {
+.container-categoria-detail  {
     padding: 150px 0;
 }
 /* ----- Product Section ----- */
@@ -57,7 +57,7 @@
     max-height: 1000px;
     filter: saturate(150%) contrast(120%) hue-rotate(10deg) drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
 }
-
+/* ----- Informations Section ----- */
 .product-info {
     padding: 0.8em 0;
 }

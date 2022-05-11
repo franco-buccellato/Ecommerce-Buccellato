@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Ecommerce-Buccellato/static/css/main.d2bbd9b5.css",
+    "main.js": "/Ecommerce-Buccellato/static/js/main.389d59f7.js",
+    "static/js/787.69af1a8b.chunk.js": "/Ecommerce-Buccellato/static/js/787.69af1a8b.chunk.js",
+    "index.html": "/Ecommerce-Buccellato/index.html",
+    "main.d2bbd9b5.css.map": "/Ecommerce-Buccellato/static/css/main.d2bbd9b5.css.map",
+    "main.389d59f7.js.map": "/Ecommerce-Buccellato/static/js/main.389d59f7.js.map",
+    "787.69af1a8b.chunk.js.map": "/Ecommerce-Buccellato/static/js/787.69af1a8b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2bbd9b5.css",
+    "static/js/main.389d59f7.js"
+  ]
+}

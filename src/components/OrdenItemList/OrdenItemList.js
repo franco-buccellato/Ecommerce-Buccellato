@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const OrdenItemList = ({orden, onAdd}) => {
 
     const vaciarCarrito = () => {
-        console.log("Llamamos a vaciar cart Y orden.");
         onAdd();
     }
 

@@ -5,12 +5,13 @@ import {useState} from 'react'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Usuario from './components/Usuario/Usuario';
-import Contacto from './components/Contacto/Contacto';
+import Orden from './components/Orden/Orden';
 import Form from './components/Form/Form';
 import CategoriaListContainer from './components/CategoriaListContainer/CategoriaListContainer';
 import Footer from './components/Footer/Footer';
 import CartListContainer from './components/CartListContainer/CartListContainer';
 import {CartContextProvider} from './components/Context/CartContext'
+import OrdenItemList from './components/OrdenItemList/OrdenItemList';
 
 function App() {
 
@@ -29,7 +30,8 @@ function App() {
           <Route exact path = '/categoria' element = {<CategoriaListContainer/>}/>
           <Route exact path = '/categoria/:categoriaId' element = {<ItemListContainer/>}/>
           <Route exact path = '/ofertas' element = {<ItemListContainer/>}/>
-          <Route exact path = '/contacto' element = {<Contacto/>}/>
+          <Route exact path = '/ordenes' element = {<Orden/>}/>
+          <Route exact path = '/ordenes/:ordenId' element = {<OrdenItemList/>}/>
           <Route exact path = '/usuario' element = {<Usuario/>}/>
           <Route exact path = '/carrito' element = {<CartListContainer/>}/>
           <Route exact path = '/detail/:productId' element = {<ItemDetailContainer/>}/>

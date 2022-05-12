@@ -73,4 +73,4 @@ Primer proyecto desarollado en React como proyecto final para una certificación
 * **Franco Buccellato** - *Proyecto Final - CoderHouse* - [franco-buccellato](https://github.com/franco-buccellato)
 
 ---
-[Franco Buccellato](https://github.com/franco-buccellato) 😊
+[Franco Buccellato](https://www.linkedin.com/in/franco-buccellato-395961a7/) 😊

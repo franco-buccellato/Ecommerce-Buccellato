@@ -59,16 +59,6 @@ function NavBar({cantidadCarrito}) {
                         </Link>
                     </li>
                     <li className="list">
-                        <Link to = {'/contacto'}>
-                            <div>
-                                <span className="icon">
-                                    <ion-icon name="call-outline"></ion-icon>
-                                </span>
-                                <span className="text">Contacto</span>
-                            </div>
-                        </Link>
-                    </li>
-                    <li className="list">
                         <Link to = {'/usuario'}>
                             <div>
                                 <span className="icon">
@@ -81,6 +71,16 @@ function NavBar({cantidadCarrito}) {
                     <li className="list">
                         <Link to = {'/carrito'}>
                             <CartWidget inicial={cantidadCarrito}/>
+                        </Link>
+                    </li>
+                    <li className="list">
+                        <Link to = {'/ordenes'}>
+                            <div>
+                                <span className="icon">
+                                    <ion-icon name="bookmarks-outline"></ion-icon>
+                                </span>
+                                <span className="text">Ordenes</span>
+                            </div>
                         </Link>
                     </li>
                     <div className="indicator"></div>

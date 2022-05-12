@@ -23,7 +23,6 @@ const ItemListContainer = () => {
     useEffect(
         () => {
             setLoading(true);
-
             const collectionRef =
                 (categoriaId ?
                     query(
@@ -43,8 +42,6 @@ const ItemListContainer = () => {
                             collection(firestoreDB, 'listaDeProductos')
                     )
                 );
-                
-
 
                 getDocs(collectionRef)
                 .then(

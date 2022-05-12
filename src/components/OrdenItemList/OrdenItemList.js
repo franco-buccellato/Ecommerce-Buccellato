@@ -7,10 +7,12 @@ const OrdenItemList = ({orden, onAdd}) => {
     const vaciarCarrito = () => {
         onAdd();
     }
-
+    console.log(orden.codigo);
     return (
         <div className="container-itemList-cart">
             <h1>Su orden fue aceptada y es la siguiente:</h1>
+            {orden.codigo && <h2>ID: {orden.codigo}</h2>}
+            
             <div className="shopping-cart-list">
                 <div className="column-labels-cart-list">
                     <label className="product-image-cart-list">Imagen</label>

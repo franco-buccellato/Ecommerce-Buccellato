@@ -21,7 +21,8 @@ const ItemListCart = () => {
             items : cart,
             buyer : user,
             total : valorTotal(),
-            date : new Date()
+            date : new Date(),
+            codigo: ''
         }
 
         const idsCart = cart.map(producto => producto.id);
@@ -65,6 +66,7 @@ const ItemListCart = () => {
             }
         ).then(
             ({id}) => {
+                objOrder.codigo = id;
                 batch.commit();
                 console.log('El id de la nueva orden es: ' + id);
             }

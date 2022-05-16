@@ -4,6 +4,16 @@ _Un ecommerce para la venta de accesorios de protección para motociclistas_
 
 ## Empecemos 🚀
 
+## Sitio Web 📄
+
+[Ecommerce-Buccellato](https://bejewelled-granita-be985b.netlify.app/)
+
+## GIFF 📼
+
+[Gif de Presentación - En repositorio](public\Ecommerce-Buccellato.gif)
+
+[Gif de Presentación - Online](https://www.canva.com/design/DAFA0N1W9vk/a1izEfrfJRRPHUYitHqvVQ/edit?utm_content=DAFA0N1W9vk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
 ### Primeros Pasos 📋
 
 _Necesitamos copiar el link del repositorio y clonarlo de la siguiente manera_

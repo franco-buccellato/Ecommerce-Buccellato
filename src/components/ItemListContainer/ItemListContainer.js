@@ -64,7 +64,7 @@ const ItemListContainer = () => {
                         setLoading(false)
                     }
                 )
-        }, [categoriaId]
+        }, [categoriaId, matchOfertas]
     )
 
     if(loading) {
